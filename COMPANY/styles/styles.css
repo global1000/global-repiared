@@ -1,0 +1,357 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease;
+    color: white;
+    background-color: #0a0a0a; /* Default dark background */
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000; /* Pure black background */
+    padding: 15px 30px;
+}
+
+/* Logo */
+.navbar .logo a {
+    color: #1e90ff; /* Blue color */
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect on logo */
+.navbar .logo a:hover {
+    color: #ffffff; /* Change to white on hover */
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 12px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover effect on navbar links */
+.nav-links a:hover {
+    color: #1e90ff; /* Change text color to blue */
+    background-color: #222222; /* Slight dark background effect */
+    border-radius: 5px;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    background-color: #1e90ff; /* Blue background */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect on dark mode button */
+.dark-mode-toggle:hover {
+    background-color: #ffffff; /* White background */
+    color: #1e90ff; /* Blue text */
+}
+
+/* Hero Section */
+.hero {
+    background-color: #1e90ff; /* Blue background */
+    color: white;
+    text-align: center;
+    padding: 80px 10px;
+}
+
+.hero h1 {
+    font-size: 42px;
+}
+
+.hero p {
+    font-size: 20px;
+}
+
+.cta-button {
+    background-color: #333333; /* Black background */
+    color: white;
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect on button */
+.cta-button:hover {
+    background-color: #1e90ff; /* Blue on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+.services {
+    padding: 60px 30px;
+    text-align: center;
+  }
+  .services h2 { font-size: 2.5em; margin-bottom: 10px; }
+  .services p { font-size: 1em; margin-bottom: 30px; color: #555; }
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .service-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+  }
+  .service-card:hover {
+    transform: scale(1.03);
+    border-color: #d40000;
+  }
+  .service-card img {
+    max-width: 100%;
+    height: 100px;
+    object-fit: contain;
+  }
+  .service-card h3 {
+    margin: 15px 0 10px;
+    font-size: 1.2em;
+  }
+  .service-card .btn {
+    background: #d40000;
+    color: white;
+    padding: 8px 16px;
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    font-size: 0.9em;
+  }
+/* Fade Animation */
+.fade {
+    animation: fadeEffect 2s;
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+/* Previous & Next Buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 8px;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 8px 13px;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s ease;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Button Hover Effect */
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Testimonial Section */
+.testimonial {
+    background-color: #0a0a0a; /* Black background */
+    padding: 60px 10px;
+}
+
+.testimonial h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #1e90ff; /* Blue color */
+}
+
+.testimonial-item {
+    background-color: #184944; /* Dark grey background */
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(8, 239, 224, 0.1);
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: center;
+}
+
+/* Hover effect on testimonials */
+.testimonial-item:hover {
+    background-color: #1e90ff; /* Change to blue */
+    color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.testimonial-item blockquote {
+    font-size: 22px;
+    font-style: italic;
+    color: #020304; /* Light blue text */
+}
+
+.testimonial-item p {
+    text-align: right;
+    font-size: 18px;
+    color: #b0c4de; /* Light blue text */
+}
+
+/* Footer */
+.footer {
+    background-color: #01292b; /* Black background */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+* Footer */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 10px;
+}
+
+.footer-section h3 {
+    color: hotpink;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Social Media Icons */
+.social-icons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.social-icons span {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 20px;
+    margin: 0 10px;
+}
+
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #030303; /* Dark mode background */
+    color: white;
+}
+
+body.dark-mode .navbar {
+    background-color: #1f1f1f; /* Darker navbar */
+}
+
+body.dark-mode .hero {
+    background-color: #1f253b; /* Royal blue in dark mode */
+}
+
+body.dark-mode .cta-button {
+    background-color: #333333; /* Black background for button */
+}
+
+body.dark-mode .testimonial-item {
+    background-color: #444444; /* Dark grey background */
+    color: white;
+}
+
+body.dark-mode .testimonial-item blockquote {
+    color: #b0c4de; /* Light blue text */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .cta-button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    .slideshow-container {
+        max-width: 100%;
+    }
+
+    .testimonial-item {
+        width: 90%;
+    }
+}

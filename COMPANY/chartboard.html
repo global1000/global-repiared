@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatboard</title>
+    <link rel="stylesheet" href="styles/chartboard.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/chartboard.js"></script>
+    <script src="scripts/chartboard.js"></script>
+</head>
+<body>
+   <!-- Navbar -->
+   <nav class="navbar">
+    <div class="logo">
+        <a href="#">GLOBAL REPAIR</a>
+    </div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="service.html">service</a></li>
+        <li><a href="product.html">product</a></li>
+        <li><a href="media.html">media</a></li>
+        <li><a href="repair.html">repair</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="chartboard.html">Chart with Gin</a></li>
+        <li><button class="dark-mode-toggle">Toggle Dark Mode</button></li>
+    </ul>
+</nav>
+
+
+    <!-- Main Section -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Expert Computer Repair Services <br>
+                 Welcome to Tech Solutions</h1>
+            <p>Your partner in technology and innovation</p>
+        </div>
+    </section>
+
+
+    <!-- Chatbox -->
+    <div class="chatbox" id="chatbox">
+        <div class="chatbox-header">
+            Chat with us
+        </div>
+        <div class="chatbox-body" id="chatbox-body">
+            <!-- Messages will be added here -->
+        </div>
+        <div class="chatbox-footer">
+            <input type="text" id="user-message" placeholder="Type your message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+</body>
+</html>

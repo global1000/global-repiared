@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" href="styles/styles.css">
+<title>Media Upload Center</title>
+<style>
+* { box-sizing: border-box; }
+
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background: linear-gradient(135deg, #ece9e6, #ffffff);
+margin: 0;
+padding: 0;
+}
+
+header {
+background: #222;
+color: #fff;
+padding: 30px 20px;
+text-align: center;
+box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+h1 { margin: 0; font-size: 2.5rem; }
+
+.upload-section {
+background: #fff;
+margin: 30px auto;
+padding: 30px;
+border-radius: 16px;
+width: 90%;
+max-width: 800px;
+box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+transition: transform 0.2s ease;
+}
+
+.upload-section:hover {
+transform: scale(1.01);
+}
+
+h2 {
+color: #333;
+margin-bottom: 20px;
+}
+
+input[type="file"] {
+padding: 10px;
+border-radius: 5px;
+border: 2px solid #007BFF;
+outline: none;
+cursor: pointer;
+background-color: #f8f9fa;
+transition: background-color 0.3s;
+}
+
+input[type="file"]:hover {
+background-color: #e2e6ea;
+}
+
+.media-display {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+margin-top: 20px;
+gap: 20px;
+}
+
+img, video, audio, iframe {
+max-width: 300px;
+width: 100%;
+border-radius: 12px;
+box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+background: #000;
+}
+
+.doc-item {
+padding: 10px;
+background: #f1f1f1;
+border-radius: 8px;
+text-align: center;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.doc-item a {
+text-decoration: none;
+color: #007BFF;
+font-weight: bold;
+display: block;
+margin-top: 8px;
+}
+
+footer {
+text-align: center;
+padding: 20px;
+background: #222;
+color: white;
+font-size: 14px;
+}
+</style>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar">
+<div class="logo">
+<a href="#">GLOBAL REPAIR</a>
+</div>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="service.html">service</a></li>
+<li><a href="product.html">product</a></li>
+<li><a href="repair.html">repair</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="chartboard.html">Chart with Gin</a></li>
+<li><button class="dark-mode-toggle">Toggle Dark Mode</button></li>
+</ul>
+</nav>
+<header>
+<h1>📁 Media Upload Center</h1>
+<p>Store your images, music, videos, and documents safely</p>
+</header>
+
+<!-- Image Upload -->
+<div class="upload-section">
+<h2>🖼️ Upload Image</h2>
+<input type="file" id="imageInput" accept="image/*">
+<div id="imagePreview" class="media-display"></div>
+</div>
+
+<!-- Music Upload -->
+<div class="upload-section">
+<h2>🎵 Upload Music</h2>
+<input type="file" id="musicInput" accept="audio/*">
+<div id="musicPreview" class="media-display"></div>
+</div>
+
+<!-- Video Upload -->
+<div class="upload-section">
+<h2>🎬 Upload Video</h2>
+<input type="file" id="videoInput" accept="video/*">
+<div id="videoPreview" class="media-display"></div>
+</div>
+
+<!-- Document Upload -->
+<div class="upload-section">
+<h2>📄 Upload Document</h2>
+<input type="file" id="docInput" accept=".pdf,.doc,.docx,.txt,.ppt,.pptx">
+<div id="docPreview" class="media-display"></div>
+</div>
+
+<footer>
+<p>&copy; 2025 Gideon Nyondo | All rights reserved.</p>
+</footer>
+
+<script>
+const handleUpload = (inputId, previewId, type) => {
+const input = document.getElementById(inputId);
+const preview = document.getElementById(previewId);
+
+input.addEventListener('change', function () {
+for (const file of this.files) {
+const reader = new FileReader();
+reader.onload = function (e) {
+let element;
+if (type === 'image') {
+element = document.createElement('img');
+element.src = e.target.result;
+} else if (type === 'audio') {
+element = document.createElement('audio');
+element.controls = true;
+element.src = e.target.result;
+} else if (type === 'video') {
+element = document.createElement('video');
+element.controls = true;
+element.src = e.target.result;
+} else if (type === 'document') {
+const docItem = document.createElement('div');
+docItem.className = 'doc-item';
+
+if (file.type === 'application/pdf') {
+const iframe = document.createElement('iframe');
+iframe.src = e.target.result;
+iframe.height = '200';
+docItem.appendChild(iframe);
+}
+
+const link = document.createElement('a');
+link.href = e.target.result;
+link.target = "_blank";
+link.innerText = file.name;
+
+docItem.appendChild(link);
+element = docItem;
+}
+preview.appendChild(element);
+};
+reader.readAsDataURL(file);
+}
+});
+};
+
+handleUpload('imageInput', 'imagePreview', 'image');
+handleUpload('musicInput', 'musicPreview', 'audio');
+handleUpload('videoInput', 'videoPreview', 'video');
+handleUpload('docInput', 'docPreview', 'document');
+</script>
+
+</body>
+</html>
